@@ -8,7 +8,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y zlib1g-dev libssl-dev libr
 
 # Install ruby
 RUN git clone https://github.com/sstephenson/ruby-build.git /usr/local/ruby-build
-ENV RUBY_VERSION 2.1.2
+ENV RUBY_VERSION 2.1.4
 RUN /usr/local/ruby-build/bin/ruby-build $RUBY_VERSION /opt/ruby
 
 ENV RACK_ENV production
