@@ -25,12 +25,6 @@ USER errbit
 # Install errbit
 RUN git clone https://github.com/errbit/errbit.git /opt/errbit/app
 
-# Install the heroku 12 factor plugins
-RUN mkdir -p /opt/errbit/app/vendor/plugins
-WORKDIR /opt/errbit/app/vendor/plugins
-RUN mkdir rails_log_stdout && cd rails_log_stdout && curl https://s3-external-1.amazonaws.com/heroku-buildpack-ruby/rails_log_stdout.tgz -s -o - | tar xzf -
-RUN mkdir rails3_serve_static_assets && cd rails3_serve_static_assets && curl https://s3-external-1.amazonaws.com/heroku-buildpack-ruby/rails3_serve_static_assets.tgz -s -o - | tar xzf -
-
 WORKDIR /opt/errbit/app
 RUN /opt/ruby/bin/bundle install --deployment
 RUN PATH=/opt/ruby/bin:$PATH bundle exec rake assets:precompile
