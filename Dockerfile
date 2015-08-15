@@ -23,7 +23,7 @@ RUN /usr/sbin/useradd --create-home --home-dir /opt/errbit --shell /bin/bash err
 USER errbit
 
 # Install errbit
-RUN git clone https://github.com/errbit/errbit.git /opt/errbit/app
+RUN git clone https://github.com/griff/errbit.git /opt/errbit/app
 
 WORKDIR /opt/errbit/app
 RUN /opt/ruby/bin/bundle install --deployment
