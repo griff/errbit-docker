@@ -19,6 +19,17 @@ And then point your browser at ```http://localhost:3000```
 The image supports configuration using environment variables.
 See the errbit documentation for list of [available variables].
 
+## Upgrade
+
+To upgrade you need to replace the errbit container and upgrade the database.
+```
+docker stop errbit
+docker rm errbit
+docker pull griff/errbit
+docker run --rm --link mongodb:mongodb griff/errbit upgrade
+docker run -d --name errbit --link mongodb:mongodb -p 3000:3000 griff/errbit
+```
+
 [errbit]: https://github.com/errbit/errbit
 [griff/errbit]: https://hub.docker.com/r/griff/errbit/
 [available variables]: https://github.com/errbit/errbit/blob/master/docs/configuration.md
