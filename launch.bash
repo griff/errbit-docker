@@ -1,6 +1,6 @@
 #!/bin/bash
-if [ -z "$MONGODB_URL" -a -n "$MONGODB_PORT" ]; then
-  export MONGODB_URL="$MONGODB_PORT/errbit"
+if [ -z "$MONGODB_URL" ]; then
+  export MONGODB_URL="mongodb://mongodb/errbit"
 fi
 export PATH=/opt/ruby/bin:$PATH
 if [ -z "$SECRET_TOKEN" -a ! -f "config/initializers/__secret_token.rb" ]; then
