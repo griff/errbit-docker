@@ -15,6 +15,7 @@ ENV RACK_ENV production
 ENV RAILS_ENV production
 ENV USE_ENV true
 ENV ERRBIT_EMAIL_FROM errbit@example.com
+ENV PORT 3000
 
 # Install bundler
 RUN /opt/ruby/bin/gem install bundler
