@@ -36,7 +36,7 @@ setting the ```PORT``` environment variable like this:
 
 ```
 docker run -d --name errbit --link mongodb:mongodb -e PORT=5000 -p 5000:5000 griff/errbit
-``
+```
 
 ## Upgrade
 
